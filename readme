@@ -1,0 +1,65 @@
+It is designed for extreme scalability in networked applications through an ingenious combination of asynchronous I/O, server-side JavaScript, smart use of JavaScript anonymous functions, and a single execution thread event-driven architecture.
+
+It is implemented around a non-blocking I/O event loop and a layer of file and network I/O libraries, all built on top of the V8 JavaScript engine (from the Chrome web browser).
+
+Node uses the
+CommonJS module system, meaning that variables local to a module are truly local
+to the module, even if they look like global variables. This clean separation between
+modules prevents the Global Object problem from being a problem.
+
+
+The asynchronous event-driven architecture of Node is said to be the cause of
+its blistering performance. Well, that and the V8 JavaScript engine. The normal
+application server model uses blocking I/O and threads for concurrency. Blocking
+I/O causes threads to wait, causing churn between threads as they are forced to wait
+on I/O while the application server handles requests.
+
+
+script arguments land in a global array named process.argv
+if (process.argv[2]) dir = process.argv[2];
+var files = fs.readdirSync(dir);
+
+• nodejs-autorestart (https://github.com/shimondoodkin/nodejsautorestart)
+manages a Node instance on Linux which uses Upstart
+(Ubuntu, Debian, and so on).
+• fugue (https://github.com/pgte/fugue) watches a Node server, restarting
+it if it crashes.
+• forever (https://github.com/indexzero/forever) is a small commandline
+Node script which ensures a script will run "forever". For a definition of
+"forever", Charlie Robbins wrote a blog post (http://blog.nodejitsu.com/
+keep-a-nodejs-server-up-with-forever) about its use.
+• node-init (https://github.com/frodwith/node-init) is a Node script
+which turns your Node application into a LSB-compliant init script. LSB
+being a specification of Linux compatibility.
+• Debian's launchtool (http://people.debian.org/~enrico/launchtool.
+html) is a system command for supervising the launch of any command,
+including running it as a daemon.
+
+
+The basic idea is to start multiple Node processes, sharing request traffic between
+them. With a cluster of single thread processes you can use all the cores
+
+
+npm search ***
+npm install ***
+npm view ***
+
+The first method to install packages in global mode is to use the -g flag as follows:
+$ npm install -g openid
+openid@0.1.6 /usr/local/node/0.4.7/lib/node_modules/openid
+
+
+In web browsers there
+is a single global context, and it causes a lot of problems if one JavaScript script
+steps on the global variables used in another script. With CommonJS modules each
+module has its own private global context, making it safe to share variables between
+functions within a module without danger of interfering with global variables in
+other modules.
+
+
+302 redirect
+res.writeHead(302, { 'Location': url });
+
+To send a cookie, set a value for either Set-Cookie, or Set-Cookie2 header as follows:
+res.setHeader('Set-Cookie2', .. cookie value ..);
+
