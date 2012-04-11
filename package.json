@@ -1,0 +1,10 @@
+{
+  "name": "",
+  "description": "",
+  "version": "0.1.0",
+  "author": "",
+  "dependencies": {
+    "express": "~2.5.9"
+  },
+  "devDependencies": {}
+}
